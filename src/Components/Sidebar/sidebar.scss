@@ -1,0 +1,84 @@
+@import "../../scss/color";
+
+.app__sidebar {
+    height: 100vh;
+    width: 100%;
+    max-width: 200px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__logo {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    &__items-container {
+        height: fit-content;
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        .menu-item {
+            height: 60px;
+            width: inherit  ;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: transparent;
+            padding: 10px;
+            box-sizing: border-box;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $orange;
+            }
+
+            &__icon {
+                height: inherit;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+    }
+
+    &__sign-out {margin-top: auto;
+        height: 60px;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            width: 90%;
+            outline: none;
+            background-color: rgba($color: $orange, $alpha: .2);
+            color: $orange;
+            border-color: transparent;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 7.5px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
+
+
