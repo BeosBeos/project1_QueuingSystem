@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import thanchuSlice from './thanchuSlice';
+import userSlice from './userSlice';
 
 // ...
 const store = configureStore({
   reducer: {
-    thanchu: thanchuSlice,
+    user: userSlice
   },
   // composeWithDevTools() ,
 })

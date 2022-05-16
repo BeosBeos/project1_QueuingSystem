@@ -9,7 +9,7 @@ import Service from '../../Assets/Service'
 import SystemSetting from '../../Assets/SystemSetting'
 import "./sidebar.scss"
 
-const items = [{ name: "Dashboard", icon: <Dashboard /> }, { name: "Thiết bị", icon: <Device /> }, { name: "Dịch vụ", icon: <Service /> }, { name: "Cấp số", icon: <NumberProvider /> }, { name: "Báo cáo", icon: <Report /> }, { name: "Cài đặt hệ thống", icon: <SystemSetting /> }]
+const items = [{ name: "Dashboard", icon: <Dashboard />, path: "panel" }, { name: "Thiết bị", icon: <Device />, path: "device" }, { name: "Dịch vụ", icon: <Service /> }, { name: "Cấp số", icon: <NumberProvider /> }, { name: "Báo cáo", icon: <Report /> }, { name: "Cài đặt hệ thống", icon: <SystemSetting /> }]
 const Sidebar = () => {
     const navigate = useNavigate()
 
@@ -20,7 +20,7 @@ const Sidebar = () => {
             </div>
             <div className="app__sidebar__items-container">
                 {items.map(item => {
-                    return <div className="menu-item">
+                    return <div className="menu-item" key={item.name} onClick={() => navigate(`${item.path ? item.path : ``}`)}>
                         <div className="menu-item__icon">
                             {item.icon}
                         </div>

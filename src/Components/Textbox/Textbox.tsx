@@ -2,15 +2,16 @@ import React from "react";
 import Eye from "../../Assets/Eye";
 import "./textbox.scss";
 
-const Textbox: React.FC<{ label: string; isPassword?: boolean }> = ({
+const Textbox: React.FC<{ label: string; isPassword?: boolean, value?: string }> = ({
   label,
   isPassword,
+  value
 }) => {
   return (
     <div className="app__text-box">
       <div className="app__text-box__label">{label}</div>
       <div className="app__text-box__input">
-        <input type={`${isPassword ? `password` : `text`}`} />
+        <input type={`${isPassword ? `password` : `text`}`} value={value}/>
         {isPassword && (
           <div className="eye-icon">
             <svg
