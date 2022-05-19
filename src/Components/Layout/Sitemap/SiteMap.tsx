@@ -10,7 +10,7 @@ const SiteMap = () => {
     })
 
   return (
-    <div className='app__sitemap'>{"Thông tin người dùng"}</div>
+    <div className='app__sitemap'>{""}</div>
   )
 }
 

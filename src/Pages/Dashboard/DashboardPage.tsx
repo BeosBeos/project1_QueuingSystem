@@ -12,7 +12,6 @@ const DashboardPage: React.FC = () => {
       <Sidebar/>
       <UserSection/>
       
-
       <div className="dashboard__content">
         <div className="dashboard__content__container">
         <SiteMap/>

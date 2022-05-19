@@ -11,3 +11,7 @@ const Button : React.FC<{text: string, isOutlined?: boolean, onClick: Function}>
 
 export default Button
 
+//`{${}}`
+//if(beo > tan)  {beo gioi hon tan}
+//{(beo > tan) ? beo gioi hon tan : beo kem hon tan}
+//{isOutlined ? outlined : fill}

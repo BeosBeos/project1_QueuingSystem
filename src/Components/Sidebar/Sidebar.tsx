@@ -37,6 +37,5 @@ const Sidebar = () => {
         </div>
     )
 }
-//beo bam alt shift f =>>> alo ?bam r ma bam lai r day co thay gi dau
 
 export default Sidebar

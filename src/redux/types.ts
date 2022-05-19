@@ -7,3 +7,13 @@ export interface userInfo {
     role: number,
     avatar: string,
 }
+
+export interface Device {
+    idManage: string,
+    typeManage: string,
+    nameManage: string,
+    userName:string,
+    ipManage: string,
+    password: string,
+    serviceManege: string,
+}
