@@ -5,582 +5,225 @@
   width: 100%;
   background-color: $gray;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
 
-  .app__layout-dashboard__title1 {
-    width: 102px;
-    height: 30px;
+  &__sitemap {
+    position: absolute;
+    top: 30px;
+    left: 30px;
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
-    color: $oranged;
+    color: $orange;
   }
+}
 
-  .app__layout-dashboard__title2 {
-    width: 162px;
-    height: 36px;
+.app__layout-dashboard__counter {
+  flex: 1;
+  height: inherit;
+  padding: 100px 30px 30px 30px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .counter-label {
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
-    color: $oranged;
-    padding-top: 45px;
+    color: $orange;
   }
-
-  .row1 {
-    max-width: 100%;
-    width: 791px;
+  .counter-cards {
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: row;
-    gap: 13px;
-    margin-top: 20px;
+    justify-content: flex-start;
+    gap: 12px;
 
-    .col1 {
-      background-color: $background;
-      width: 186px;
+    &__card {
       height: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-      position: relative;
-      :hover {
-        cursor: pointer;
-      }
-      .logo1 {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #e8effe;
-        margin-top: 8px;
-        left: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-      }
-      .assigned {
-        width: 60px;
-        height: 36px;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        margin-left: 72px;
-        margin-top: 14px;
-      }
-      .number1 {
-        width: 108px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 30px;
-        font-weight: 700;
-        position: absolute;
-        left: 12px;
-        top: 68px;
-      }
-      .box1 {
-        width: 48px;
-        height: 15px;
-        background-color: #ffefd9;
-        left: 130px;
-        bottom: 20px;
-        border-radius: 7.2px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .box__persent1 {
-        width: 29px;
-        height: 12px;
-        font-weight: 400;
-        font-size: 8px;
-        line-height: 12px;
-      }
-    }
+      flex: 1;
+      border-radius: 10px;
+      background-color: $background;
+      box-shadow: $shadow;
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 8px 12px;
+      box-sizing: border-box;
 
-    .col2 {
-      background-color: $background;
-      width: 186px;
-      height: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-      position: relative;
-      :hover {
-        cursor: pointer;
-      }
-      .logo2 {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #e1f7e6;
-        margin-top: 8px;
-        left: 12px;
+      .row {
+        flex: 1;
         display: flex;
+        flex-direction: row;
+        gap: 8px;
         align-items: center;
-        justify-content: center;
-        position: absolute;
-      }
-      .used {
-        width: 75px;
-        height: 36px;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        margin-left: 72px;
-        margin-top: 14px;
-      }
-      .number2 {
-        width: 108px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 30px;
-        font-weight: 700;
-        position: absolute;
-        left: 12px;
-        top: 68px;
-      }
-      .box2 {
-        width: 48px;
-        height: 15px;
-        background-color: #fbe2e2;
-        left: 130px;
-        bottom: 20px;
-        border-radius: 7.2px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .box__persent2 {
-        width: 29px;
-        height: 12px;
-        font-weight: 400;
-        font-size: 8px;
-        line-height: 12px;
-      }
-    }
 
-    .col3 {
-      background-color: $background;
-      width: 186px;
-      height: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-      position: relative;
-      :hover {
-        cursor: pointer;
-      }
-      .logo3 {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #fff3e9;
-        margin-top: 8px;
-        left: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-      }
-      .waiting {
-        width: 60px;
-        height: 36px;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        margin-left: 72px;
-        margin-top: 14px;
-      }
-      .number3 {
-        width: 108px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 30px;
-        font-weight: 700;
-        position: absolute;
-        left: 12px;
-        top: 68px;
-      }
-      .box3 {
-        width: 48px;
-        height: 15px;
-        background-color: #ffefd9;
-        left: 130px;
-        bottom: 20px;
-        border-radius: 7.2px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .box__persent3 {
-        width: 29px;
-        height: 12px;
-        font-weight: 400;
-        font-size: 8px;
-        line-height: 12px;
-      }
-    }
+        .image {
+          height: 48px;
+          width: 48px;
 
-    .col4 {
-      background-color: $background;
-      width: 186px;
-      height: 120px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-      position: relative;
-      :hover {
-        cursor: pointer;
-      }
-      .logo4 {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #fee9e9;
-        margin-top: 8px;
-        left: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-      }
-      .pass {
-        width: 65px;
-        height: 36px;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 18px;
-        margin-left: 72px;
-        margin-top: 14px;
-      }
-      .number4 {
-        width: 108px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 30px;
-        font-weight: 700;
-        position: absolute;
-        left: 12px;
-        top: 68px;
-      }
-      .box4 {
-        width: 48px;
-        height: 15px;
-        background-color: #fbe2e2;
-        left: 130px;
-        bottom: 20px;
-        border-radius: 7.2px;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .box__persent4 {
-        width: 29px;
-        height: 12px;
-        font-weight: 400;
-        font-size: 8px;
-        line-height: 12px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .blue {
+          background-color: rgba($color: #6695fb, $alpha: 0.15);
+        }
+        .green {
+          background-color: rgba($color: green, $alpha: 0.15);
+        }
+        .orange {
+          background-color: rgba($color: $orange, $alpha: 0.15);
+        }
+        .red {
+          background-color: rgba($color: red, $alpha: 0.15);
+        }
+
+        .label {
+          max-width: 60px;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 18px;
+        }
+        .count {
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 45px;
+        }
+
+        .diff {
+          margin-left: auto;
+          height: 15px;
+          width: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 8px;
+          border-radius: 8px;
+          font-size: 8px;
+          font-weight: 400;
+          line-height: 12px;
+          position: relative;
+
+          svg {
+            position: absolute;
+            left: 6px;
+          }
+        }
+
+        .raise {
+          color: $orange;
+          background-color: rgba($color: $orange, $alpha: 0.15);
+          svg {
+            path {
+              fill: $orange;
+            }
+          }
+        }
+        .drop {
+          color: red;
+          background-color: rgba($color: red, $alpha: 0.15);
+          svg {
+            transform: rotate(180deg);
+            path {
+              fill: red;
+            }
+          }
+        }
       }
     }
   }
-
-  .row2 {
-    // background-color: red;
-    max-width: 100%;
-    width: 791px;
-    height: 484px;
-    border-radius: 12px;
-    margin-top: 16px;
-    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-    display: flex;
-  }
-
-  .bigcol2 {
-    width: 400px;
-    height: 100%;
-    height: 810px;
+  .counter-chart {
+    width: 100%;
+    height: 790px;
+    border-radius: 10px;
     background-color: $background;
-    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
-    border-radius: 8px 0px 0px 8px;
-    position: absolute;
-    right: 0;
+    box-shadow: $shadow;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .app__layout-dashboard__title3 {
-      width: 120px;
-      height: 36px;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 36px;
-      color: $orange;
-      margin-top: 104px;
-      margin-left: 24px;
+    canvas {
+      margin-top: auto !important;
+      width: 100% !important;
     }
 
-    .row__right {
-      .row__right__top {
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: fit-content;
+      width: 100%;
+      justify-content: space-between;
+
+      .chart-label {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        color: $text;
+      }
+      .chart-month-of-year {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        color: rgba($color: $text, $alpha: 0.7);
+      }
+
+      .col {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        position: relative;
+        align-items: flex-start;
 
-        .row__right__top__1 {
-          width: 353px;
-          height: 83px;
-          border-radius: 12px;
-          margin-left: 24px;
-          box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-          background-color: $background;
-          position: relative;
+        .view-mode {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
 
-          .number__right__1 {
-            width: 64px;
-            height: 36px;
-            top: 12px;
-            left: 88px;
-            font-size: 24px;
-            font-weight: 800;
-            position: absolute;
-          }
-          .number__right__2 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 17px;
-            color: $orange;
-            position: absolute;
-          }
-          .number__right__3 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 43px;
-            color: $orange;
-            position: absolute;
-          }
-          .text__right__1 {
-            width: 50px;
-            height: 21px;
-            line-height: 21px;
-            font-size: 14px;
+          span {
+            font-family: Nunito;
+            font-size: 16px;
             font-weight: 600;
-            color: $orange;
-            top: 45px;
-            left: 106px;
-            position: absolute;
+            line-height: 24px;
+            margin-right: 8px;
           }
-          .text__right__2 {
-            width: 87px;
-            height: 21px;
-            left: 200px;
-            top: 18px;
+
+          select {
+            height: 42px;
+            width: 106px;
+            border-radius: 8px;
+            // padding: 10px, 12px, 10px, 12px;
+            padding: 5px 12px;
+            font-size: 16px;
             font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .text__right__3 {
-            width: 95px;
-            height: 21px;
-            left: 200px;
-            top: 44px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .tivi__right{
-            left: 89px;
-            top: 46px;
-            position: absolute;  
-          }
-          .persen90{
-            left: 16px;
-            top: 11px;
-            position: absolute;
+            line-height: 24px;
+            color: rgba($color: $text, $alpha: 0.7);
+            border: 1.5px solid rgba(212, 212, 215, 1);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            background-image: linear-gradient(
+                45deg,
+                transparent 50%,
+                $orange 50%
+              ),
+              linear-gradient(135deg, $orange 50%, transparent 50%);
+            background-position: calc(100% - 20px) calc(1em + 2px),
+              calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
           }
         }
-
-
-        .row__right__top__2 {
-          width: 353px;
-          height: 83px;
-          border-radius: 12px;
-          margin-left: 24px;
-          box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-          background-color: $background;
-          position: relative;
-          .number__right__1 {
-            width: 64px;
-            height: 36px;
-            top: 12px;
-            left: 88px;
-            font-size: 24px;
-            font-weight: 800;
-            position: absolute;
-          }
-          .number__right__2 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 17px;
-            color: #4277FF;
-            position: absolute;
-          }
-          .number__right__3 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 43px;
-            color: #4277FF;
-            position: absolute;
-          }
-          .text__right__1 {
-            width: 50px;
-            height: 21px;
-            line-height: 21px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #4277FF;
-            top: 45px;
-            left: 106px;
-            position: absolute;
-          }
-          .text__right__2 {
-            width: 87px;
-            height: 21px;
-            left: 200px;
-            top: 18px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .text__right__3 {
-            width: 95px;
-            height: 21px;
-            left: 200px;
-            top: 44px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .service__right{
-            left: 89px;
-            top: 46px;
-            position: absolute;  
-          }
-          .persen76{
-            left: 16px;
-            top: 11px;
-            position: absolute;
-          }
-
-        }
-
-
-        .row__right__top__3 {
-          width: 353px;
-          height: 83px;
-          border-radius: 12px;
-          margin-left: 24px;
-          box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-          background-color: $background;
-          position: relative;
-          .number__right__1 {
-            width: 64px;
-            height: 36px;
-            top: 12px;
-            left: 88px;
-            font-size: 24px;
-            font-weight: 800;
-            position: absolute;
-          }
-          .number__right__2 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 12px;
-            color: #35C75A;
-            position: absolute;
-          }
-          .number__right__3 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 33px;
-            color: #35C75A;
-            position: absolute;
-          }
-          .number__right__4 {
-            width: 38px;
-            height: 18px;
-            left: 299px;
-            top: 54px;
-            color: #35C75A;
-            position: absolute;
-          }
-          .text__right__1 {
-            width: 50px;
-            height: 21px;
-            line-height: 21px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #35C75A;
-            top: 45px;
-            left: 106px;
-            position: absolute;
-          }
-          .text__right__2 {
-            width: 87px;
-            height: 21px;
-            left: 200px;
-            top: 12px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .text__right__3 {
-            width: 95px;
-            height: 21px;
-            left: 200px;
-            top: 33px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .text__right__4 {
-            width: 95px;
-            height: 21px;
-            left: 200px;
-            top: 54px;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 21px;
-            position: absolute;
-          }
-          .series__right{
-            left: 89px;
-            top: 46px;
-            position: absolute;  
-          }
-          .persen86{
-            left: 16px;
-            top: 11px;
-            position: absolute;
-          }
-        }
-      }
-      .row__right__bot {
-        width: 353px;
-        height: 336px;
-        border-radius: 12px;
-        left: 24px;
-        box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-        margin-top: 12px;
-        position: absolute;
       }
     }
   }

@@ -1,6 +1,21 @@
-$background: #FFFFFF;
+$background: #ffffff;
 $gray: #f6f6f6;
-$text: #37474F;
+$text: #37474f;
 $text-box-border: #d4d4d7;
-$orange :#FF9138;
-$oranged: #FF7506;
+$orange: #ff9138;
+$oranged: #ff7506;
+$blue: #5185f7;
+$shadow: 2px 2px 15px 0px rgba(70, 64, 67, 0.1);
+$green: #35c75a;
+
+.blue {
+  color: $blue;
+}
+
+.orange {
+  color: $orange;
+}
+
+.green {
+  color: $green;
+}

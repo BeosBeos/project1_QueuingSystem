@@ -6,9 +6,7 @@ import { Outlet, useNavigate } from "react-router";
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  
-  
-
+ 
   return (
     <div className="app__login-page">
       

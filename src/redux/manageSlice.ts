@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
-import {  Device } from './types';
+// import {  Device } from './types';
 
 
-const initialState: Device = {
+const initialState: any = {
     idManage: "Nhập mã thiết bị",
     typeManage: "Chọn loại thiết bị",
     nameManage: "Nhập tên thiết bị",
