@@ -1,253 +1,254 @@
-import React from "react";
-import Arrowright from "../../../Assets/Arrowright";
-import "./device.scss";
+import React from 'react';
+import { ReactComponent as ArrowIc } from '../../../Assets/arrow.svg';
+import Pagination from '../../Pagination/Pagination';
+import Select from '../../Select/Select';
+import Table, { IDeviceRow, Service } from '../../Table/Table';
+import './device.scss';
 
-const Device = () => {
+const activeStatus = ['Tất cả', 'Hoạt động', 'Ngưng hoạt động'];
+const connectionStatus = ['Tất cả', 'Kết nối', 'Mất kết nối'];
+
+const tableData: IDeviceRow[] = [
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_02',
+    deviceName: 'Kiosk2',
+    ipAddress: '192.169.1.2',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: false,
+    displayUpdate: false,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: false,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: false,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_01',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'KIO_02',
+    deviceName: 'Kiosk2',
+    ipAddress: '192.169.1.2',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: false,
+    displayUpdate: false,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: false,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: false,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: false,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'K2',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+  {
+    deviceId: 'ABC',
+    deviceName: 'Kiosk',
+    ipAddress: '192.169.1.1',
+    isActivated: true,
+    isConnected: true,
+    services: [Service.Dental, Service.Heart],
+    displayDetail: true,
+    displayUpdate: true,
+  },
+];
+
+const Device: React.FC = () => {
   return (
     <div className="app__layout-device">
-      <div className="device__text1">Thiết bị</div>
-      <div className="arrow__right">
-        <Arrowright />
+      <div className="sitemap">
+        <span>Thiết bị</span>
+        <span>
+          <ArrowIc />
+        </span>
+        <span>Danh sách thiết bị</span>
       </div>
-      <div className="device__text2">Danh sách thiết bị</div>
-      <div className="device__title">Danh sách thiết bị</div>
-      <div className="status">
-        <div className="status1">Trạng thái hoạt động</div>
-        <form action="form">
-          <select className="status__form1" name="languages" id="lang">
-            <option value="tatca">Tất cả</option>
-            <option value="hoatdong">Hoạt động</option>
-            <option value="ngunghoatdong">Ngưng hoạt động</option>
-          </select>
-        </form>
-        <div className="status2">Trạng thái kết nối</div>
-        <form action="form">
-          <select className="status__form2" name="languages" id="lang">
-            <option value="tatca">Tất cả</option>
-            <option value="ketnoi">Kết Nối</option>
-            <option value="matketnoi">Mất Kết Nối</option>
-          </select>
-        </form>
-        <div className="keywords">Từ khóa</div>
-        <input
-          className="keywords__1"
-          type="text"
-          placeholder="Nhập từ khóa"
-        ></input>
-      </div>
-      <div className="container">
-        <div className="device_container-box">
-          <div className="device__container-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Mã thiết bị</th>
-                  <th>Tên thiết bị</th>
-                  <th>Địa chỉ IP</th>
-                  <th>Trạng thái hoạt động</th>
-                  <th>Trạng thái kết nối</th>
-                  <th>Dịch vụ sử dụng</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__orange">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__orange">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__orange">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__orange">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__orange">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-
-                <tr className="device__container-table__white">
-                  <td>KIO_01</td>
-                  <td>Kiosk</td>
-                  <td>191.168.1.10</td>
-                  <td>Ngưng hoạt động</td>
-                  <td>Mất kết nối</td>
-                  <td>
-                    Khám tim mạch, Khám mắt... <a href="">Xem thêm</a>
-                  </td>
-                  <td>
-                    <a href="">Chi tiết</a>
-                  </td>
-                  <td>
-                    <a href="">Cập nhật</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div className="app__layout-device__container">
+        <div className="row label">Danh sách thiết bị</div>
+        <div className="row filters">
+          <Select
+            label="Trạng thái hoạt động"
+            options={activeStatus}
+            width={300}
+          />
+          <Select
+            label="Trạng thái kết nối"
+            options={connectionStatus}
+            width={300}
+          />
+          {/* <Textbox label="Từ khoá" /> */}
         </div>
-      </div>
-      <div className="add">
-        <div className="add__logo">
-          <div className="add__logo__plus">+</div>
+        <div className="row table">
+          <Table data={tableData} displayRow={9} />
         </div>
-        <div className="add__device">Thêm thiết bị</div>
       </div>
     </div>
   );

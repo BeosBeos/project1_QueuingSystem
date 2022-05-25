@@ -1,4 +1,4 @@
-@import "../../scss/color";
+@import '../../scss/color';
 
 .app__text-box {
   width: 100%;
@@ -13,7 +13,7 @@
     width: inherit;
     height: 44px;
     position: relative;
-    
+
     margin-top: 8px;
 
     input {
@@ -23,9 +23,8 @@
       box-sizing: border-box;
       border-radius: 10px;
       border: solid 1px $text-box-border;
-      
-
-    
+      height: 44px;
+      border: 1.5px solid #d4d4d7;
 
       &:focus {
         outline: rgba($color: blue, $alpha: 0.3);
@@ -34,12 +33,12 @@
     }
 
     .eye-icon {
-        position: absolute;
-        right: 10px;
-        top: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
     }
   }
 }

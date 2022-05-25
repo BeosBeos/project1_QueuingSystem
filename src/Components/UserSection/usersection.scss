@@ -1,4 +1,4 @@
-@import "../../scss/color";
+@import '../../scss/color';
 
 .app__user-section {
   position: absolute;
@@ -28,16 +28,15 @@
       background-color: #fff;
       position: absolute;
       border-radius: 10px;
-      top: 67px ;
+      top: 67px;
       box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-      left: -96px;
-
+      left: -64px;
 
       &__header {
         height: 48px;
         width: inherit;
         background-color: rgba($color: $orange, $alpha: 1);
-        border-radius: 10px 10px 0 0 ;
+        border-radius: 10px 10px 0 0;
         color: #fff;
         font-size: 20px;
         font-weight: 700;
@@ -71,7 +70,6 @@
             border-bottom: none;
             border-radius: 0 0 10px 10px;
           }
-          
 
           &:hover {
             background-color: rgba($color: $orange, $alpha: 0.3);
@@ -96,9 +94,9 @@
   .active {
     background-color: rgba($color: $oranged, $alpha: 1);
     svg {
-        path {
-            fill: #fff
-        }
+      path {
+        fill: #fff;
+      }
     }
   }
 
@@ -119,16 +117,16 @@
   .hello-user {
     margin-left: 8px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     color: $text;
-     .hello {
-         font-size: 12px;
-         font-weight: 300;
-     }
+    .hello {
+      font-size: 12px;
+      font-weight: 300;
+    }
 
-     .user-name {
-         font-size: 16px;
-         font-weight: 700;
-     }
+    .user-name {
+      font-size: 16px;
+      font-weight: 700;
+    }
   }
 }

@@ -1,0 +1,84 @@
+@import '../../scss/color';
+
+.app__select {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__label {
+    color: $text;
+    font-size: 18px;
+    line-height: 27px;
+    width: fit-content;
+  }
+  &__selector {
+    margin-top: 8px;
+    height: 44px;
+    width: fit-content;
+    min-width: 106px;
+    border-radius: 8px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1.5px solid #d4d4d7;
+    background-color: $background;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    span {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $text;
+    }
+
+    .dropdown {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 52px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 0px;
+      gap: 2px;
+      background: $background;
+      box-shadow: $shadow;
+      border-radius: 8px;
+      transition: 300ms ease-in-out;
+
+      .select-item {
+        height: 44px;
+        width: 100%;
+        border-radius: 0px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        user-select: none;
+        background-color: $background;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: $text;
+
+        &:hover {
+          background-color: rgba($color: $orange, $alpha: 0.2);
+        }
+      }
+
+      .selected {
+        background-color: rgba($color: $orange, $alpha: 0.2);
+      }
+    }
+  }
+}
