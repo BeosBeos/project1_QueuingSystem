@@ -1,0 +1,93 @@
+@import '../../../../scss/color';
+
+.new-device {
+  height: 1000px;
+  width: 100%;
+}
+
+.title {
+  height: 36px;
+  width: 172px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: $orange;
+  padding-top: 25px;
+}
+
+.container {
+  height: 550px;
+  width: 1152px;
+  border-radius: 16px;
+  background-color: $background;
+  margin-top: 16px;
+
+  .container__info-divice {
+    height: 30px;
+    width: 162px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $orange;
+    padding-left: 24px;
+    padding-top: 16px;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: row;
+
+  .col__left {
+    padding-left: 24px;
+    width: 540px;
+    height: 44px;
+    padding-top: 20px;
+  }
+
+  .col__right {
+    padding-left: 24px;
+    width: 540px;
+    height: 44px;
+    padding-top: 20px;
+  }
+}
+
+.use-service {
+  height: 44px;
+  width: 1104px;
+  border-radius: 8px;
+  padding: 10px, 270px, 10px, 12px;
+  padding-top: 200px;
+  padding-left: 24px;
+}
+
+.note {
+  height: 21px;
+  width: 195px;
+  padding-left: 24px;
+  padding-top: 45px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.btn__bottom {
+  display: flex;
+  flex-direction: row;
+  :hover {
+    cursor: pointer;
+  }
+  .cancel {
+    height: 48px;
+    width: 147px;
+    margin-left: 400px;
+    border-radius: 8px;
+  }
+  .add__device {
+    height: 48px;
+    width: 147px;
+    margin-left: 32px;
+    border-radius: 8px;
+  }
+}

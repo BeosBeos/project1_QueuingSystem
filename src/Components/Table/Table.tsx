@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Pagination from '../Pagination/Pagination';
 import './table.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 export enum DeviceActiveStatus {
   Active = 'Hoạt động',
   Inactive = 'Ngưng hoạt động',
@@ -27,6 +29,9 @@ export enum ColumnLabels {
   services = 'Dịch vụ sử dụng',
   displayDetail = 'Chi tiết',
   displayUpdate = 'Cập nhật',
+  serviceId = 'Mã dịch vụ',
+  serviceName = 'Tên dịch vụ',
+  serviceDetail = 'Chi tiết dịch vụ',
 }
 
 export enum DisplayedColumns {
@@ -38,7 +43,19 @@ export enum DisplayedColumns {
   services,
   displayDetail,
   displayUpdate,
+  serviceId,
+  serviceName,
+  serviceDetail,
 }
+
+// export enum ServiceColumns {
+//   serviceId,
+//   serviceName,
+//   serviceDetail,
+//   isActivated,
+//   displayDetail,
+//   displayUpdate,
+// }
 
 export interface IDeviceRow {
   deviceId: string;
@@ -51,9 +68,18 @@ export interface IDeviceRow {
   displayUpdate: boolean;
 }
 
+export interface IServiceRow {
+  serviceId: string;
+  serviceName: string;
+  serviceDetail: string;
+  isActivated: boolean;
+  displayDetail: boolean;
+  displayUpdate: boolean;
+}
+
 type T = keyof typeof ColumnLabels;
 
-const Table: React.FC<{ data: IDeviceRow[]; displayRow?: number }> = ({
+const Table: React.FC<{ data: Array<any>; displayRow?: number }> = ({
   data,
   displayRow,
 }) => {
@@ -75,15 +101,16 @@ const Table: React.FC<{ data: IDeviceRow[]; displayRow?: number }> = ({
       setPaginationData([]);
       // setPaginationIndex(0);
     };
-  }, [paginationIndex]);
+  }, [paginationIndex, data, displayRow]);
 
   const changeIndex = (index: number) => {
     setPaginationIndex(index);
   };
 
   return (
-    <div className="app__table">
+    <div className='app__table'>
       <table>
+        {/* {Object.keys(data[0]).toString().includes('serviceId').toString()} */}
         <thead>
           <tr>
             {Object.keys(paginationData[0]).map((column: string) => {
@@ -95,25 +122,29 @@ const Table: React.FC<{ data: IDeviceRow[]; displayRow?: number }> = ({
           {paginationData.map((row) => {
             return (
               <tr>
-                {Object.values(row).map((value, index) => {
+                {Object.values(row).map((value: any, index: number) => {
                   if (index === DisplayedColumns.displayDetail) {
                     return (
                       <td>
-                        <a href="#">{value === true && `Chi tiết`}</a>
+                        {value === true && (
+                          <Link to={'/dashboard/device/modify'}>Chi tiết</Link>
+                        )}
                       </td>
                     );
                   }
                   if (index === DisplayedColumns.displayUpdate) {
                     return (
                       <td>
-                        <a href="#">{value === true && `Cập nhật`}</a>
+                        {value === true && (
+                          <Link to={'/dashboard/device/modify'}>Cập nhật</Link>
+                        )}
                       </td>
                     );
                   }
                   if (index === DisplayedColumns.isActivated) {
                     return (
                       <td>
-                        <div className="row">
+                        <div className='row'>
                           <div
                             className={`status-dot ${
                               value ? `active` : `inactive`
@@ -129,7 +160,7 @@ const Table: React.FC<{ data: IDeviceRow[]; displayRow?: number }> = ({
                   if (index === DisplayedColumns.isConnected) {
                     return (
                       <td>
-                        <div className="row">
+                        <div className='row'>
                           <div
                             className={`status-dot ${
                               value ? `active` : `inactive`
@@ -153,7 +184,7 @@ const Table: React.FC<{ data: IDeviceRow[]; displayRow?: number }> = ({
           })}
         </tbody>
       </table>
-      <div className="pagination">
+      <div className='pagination'>
         <Pagination
           data={data}
           displayRow={displayRow ? displayRow : 9}

@@ -6,69 +6,17 @@
   min-height: 100vh;
   background-color: $gray;
   position: relative;
-  // overflow-y: scroll;
+  // overflow-y: scroll;;
 
-  .sitemap {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    span {
-      display: flex;
-      align-items: center;
-      font-family: Nunito;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 30px;
-      color: $orange;
-      svg {
-        path {
-          fill: $text;
-        }
-      }
-      &:first-child {
-        color: $text;
-      }
-    }
-  }
-
-  &__container {
+  .content {
     height: 100%;
     width: 100%;
-    padding: 90px 100px 30px 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
     box-sizing: border-box;
+    margin-top: 90px;
+    padding: 0 30px 30px 30px;
     overflow-y: scroll;
-
     &::-webkit-scrollbar {
       display: none;
-    }
-    // overflow-x: hidden;
-
-    .row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .label {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 36px;
-      color: $orange;
-    }
-
-    .filters {
-      gap: 20px;
-    }
-    .table {
     }
   }
 }
