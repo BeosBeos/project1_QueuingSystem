@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router';
-import Calendar1 from '../../../Assets/Calendar1';
-import Calendar2 from '../../../Assets/Calendar2';
-import Wait from '../../../Assets/Wait';
-import Passing from '../../../Assets/Passing';
+import { ReactComponent as Calendar1Ic } from '../../../Assets/calendar1.svg';
+import { ReactComponent as Calendar2Ic } from '../../../Assets/calendar2.svg';
+import { ReactComponent as WaitIc } from '../../../Assets/wait.svg';
+import { ReactComponent as PassingIc } from '../../../Assets/passing.svg';
 
 import {
   Chart as ChartJS,
@@ -67,7 +67,7 @@ const Counter: React.FC = () => {
           <div className='counter-cards__card'>
             <div className='row'>
               <div className='image blue'>
-                <Calendar1 />
+                <Calendar1Ic />
               </div>
               <div className='label'>Số thứ tự đã cấp</div>
             </div>
@@ -82,7 +82,7 @@ const Counter: React.FC = () => {
           <div className='counter-cards__card'>
             <div className='row'>
               <div className='image green'>
-                <Calendar2 />
+                <Calendar2Ic />
               </div>
               <div className='label'>Số thứ tự đã cấp</div>
             </div>
@@ -98,7 +98,7 @@ const Counter: React.FC = () => {
           <div className='counter-cards__card'>
             <div className='row'>
               <div className='image orange'>
-                <Wait />
+                <WaitIc />
               </div>
               <div className='label'>Số thứ tự đã cấp</div>
             </div>
@@ -113,7 +113,7 @@ const Counter: React.FC = () => {
           <div className='counter-cards__card'>
             <div className='row'>
               <div className='image red'>
-                <Passing />
+                <PassingIc />
               </div>
               <div className='label'>Số thứ tự đã cấp</div>
             </div>

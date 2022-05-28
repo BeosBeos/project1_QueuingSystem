@@ -1,11 +1,21 @@
-@import './../../../../scss/color';
+@import '../../../../scss/color';
 
-.modify-device {
+.app__layout-device__modify-device {
   height: 100%;
+  max-height: fit-content;
   width: 100%;
-  background-color: $gray;
-
-  &__tittle {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 120px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__title {
+    height: 36px;
+    width: 100%;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
@@ -14,73 +24,60 @@
   }
 
   &__container {
-    height: 550px;
-    width: 1152px;
+    height: fit-content;
+    width: 100%;
+    padding: 16px 24px;
     border-radius: 16px;
     background-color: $background;
     margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
 
-    .container-label {
-      height: 30px;
-      width: 162px;
+    .form-label {
       font-size: 20px;
       font-weight: 700;
       line-height: 30px;
       color: $orange;
-      padding-left: 24px;
-      padding-top: 16px;
     }
-
-    .col {
+    .row {
+      height: fit-content;
+      width: 100%;
       display: flex;
       flex-direction: row;
-
-      &__left {
-        padding-left: 24px;
-        width: 540px;
-        height: 44px;
-        padding-top: 20px;
-      }
-
-      &__right {
-        padding-left: 24px;
-        width: 540px;
-        height: 44px;
-        padding-top: 20px;
-      }
-    }
-
-    .use-service {
-
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
     .note {
+      height: 21px;
+      width: 195px;
+      padding-left: 24px;
+      padding-top: 45px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+    }
 
+    .app__text-box__label {
+      font-family: Nunito;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
     }
   }
-
-  .btn__bottom {
-    margin-top: 24px;
+  &__btn__bottom {
+    height: fit-content;
     display: flex;
     flex-direction: row;
-    gap: 40px;
-
-    :hover {
-      cursor: pointer;
-    }
-
-    .cancel {
-      height: 48px;
-      width: 147px;
-      margin-left: 400px;
-      border-radius: 8px;
-    }
-
-    .update__device {
-      height: 48px;
-      width: 147px;
-      margin-left: 32px;
-      border-radius: 8px;
-    }
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
   }
 }
+// conmeo

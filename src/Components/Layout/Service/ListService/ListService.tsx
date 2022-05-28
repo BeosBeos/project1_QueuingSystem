@@ -1,232 +1,48 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import Select from '../../../Select/Select';
-import Table, { IDeviceRow, IServiceRow, Service } from '../../../Table/Table';
+import Table from '../../../Table/Table';
 import './listservice.scss';
 import { ReactComponent as AddIc } from '../../../../Assets/add-square.svg';
+import {
+  activeStatus,
+  connectionStatus,
+  serviceDetailList,
+} from '../../../Mock';
+import DatePicker from '../../../DatePicker/DatePicker';
+import Textbox, { InputType } from '../../../Textbox/Textbox';
 
-const activeStatus = ['Tất cả', 'Hoạt động', 'Ngưng hoạt động'];
-const connectionStatus = ['Tất cả', 'Kết nối', 'Mất kết nối'];
-const tableData: IServiceRow[] = [
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_02',
-    serviceName: 'Kiosk2',
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: false,
-    displayUpdate: false,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: false,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: false,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_01',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'KIO_02',
-    serviceName: 'Kiosk2',
-    isActivated: true,
-    serviceDetail: 'Chi tiết dịch vụ',
-    displayDetail: false,
-    displayUpdate: false,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: false,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: false,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: false,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'K2',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-  {
-    serviceId: 'ABC',
-    serviceName: 'Kiosk',
-
-    serviceDetail: 'Chi tiết dịch vụ',
-    isActivated: true,
-    displayDetail: true,
-    displayUpdate: true,
-  },
-];
-const ListService = () => {
+const ListService: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <>
-      <div className="service-list">
-        <div className="row label">Danh sách dịch vụ</div>
-        <div className="row filters">
+    <div className="app__service-layout__service-list">
+      <div className="app__service-layout__service-list__container">
+        <div className="row app__service-layout__service-list__container__label">Danh sách dịch vụ</div>
+        <div className="row app__service-layout__service-list__container__filters">
           <Select
             label="Trạng thái hoạt động"
             options={activeStatus}
             width={300}
           />
-          <Select
-            label="Trạng thái kết nối"
-            options={connectionStatus}
-            width={300}
-          />
-          {/* <Textbox label="Từ khoá" /> */}
+          <DatePicker label="Chọn thời gian" />
+          <Textbox label="Từ khoá" type={InputType.search} />
         </div>
-        <div className="row table">
-          <Table data={tableData} displayRow={9} />
+        <div className="row app__service-layout__service-list__container__table">
+          <Table data={serviceDetailList} displayRow={9} />
         </div>
       </div>
+
       <div
-        className="add-service-btn"
-        onClick={() => navigate('/dashboard/device/new')}
+        className="app__service-layout__service-list__float-btn"
+        onClick={() => navigate('/dashboard/service/new')}
       >
         <span>
           <AddIc />
         </span>
         <span>Thêm dịch vụ</span>
       </div>
-    </>
+    </div>
+
   );
 };
 

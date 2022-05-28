@@ -9,7 +9,8 @@ const Select: React.FC<{
   options: string[];
   onSelectedChange?: Function;
   width?: number;
-}> = ({ label, options, onSelectedChange, width }) => {
+  flexItem?:boolean
+}> = ({ label, options, onSelectedChange, width, flexItem }) => {
   const [isExpand, setIsExpand] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   useEffect(() => {
@@ -19,7 +20,7 @@ const Select: React.FC<{
   }, [selectedIndex]);
 
   return (
-    <div className="app__select">
+    <div className={`app__select ${flexItem && `flex-1`}`}>
       {label && <div className="app__select__label">{label}</div>}
       <div
         className="app__select__selector"
@@ -34,18 +35,20 @@ const Select: React.FC<{
         </span>
         {isExpand && (
           <div className="dropdown">
-            {options.map((item, index) => {
-              return (
-                <div
-                  className={`select-item ${
-                    selectedIndex === index && `selected`
-                  }`}
-                  onClick={() => setSelectedIndex(index)}
-                >
-                  {item}
-                </div>
-              );
-            })}
+            <div className="dropdown__container">
+              {options.map((item, index) => {
+                return (
+                  <div
+                    className={`select-item ${selectedIndex === index && `selected`
+                      }`}
+                    onClick={() => setSelectedIndex(index)}
+                  >
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
         )}
       </div>

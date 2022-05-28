@@ -1,3 +1,4 @@
+type Nullable<T> = T | null;
 export interface userInfo {
     fullName: string,
     userName: string,
@@ -5,7 +6,7 @@ export interface userInfo {
     email: string,
     password: string,
     role: number,
-    avatar: string,
+    avatar?: string,
 }
 
 

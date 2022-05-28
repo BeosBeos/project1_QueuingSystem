@@ -3,8 +3,8 @@ import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from 'react-circular-progressbar';
-import Service from '../../../../Assets/Service';
-import Tivi from '../../../../Assets/Tivi';
+import { ReactComponent as ServiceIc } from '../../../../Assets/service.svg';
+import { ReactComponent as TiviIc } from '../../../../Assets/tivi.svg';
 import './summarycard.scss';
 
 import 'react-circular-progressbar/dist/styles.css';
@@ -51,9 +51,9 @@ const SummaryCard: React.FC<{
         <div className='hight-light-stats__number'>{total}</div>
         <div className='hight-light-stats__type'>
           <div className='type-image'>
-            {type === 'device' && <Tivi />}
-            {type === 'service' && <Service />}
-            {type === 'numberProvide' && <Service />}
+            {type === 'device' && <TiviIc />}
+            {type === 'service' && <ServiceIc />}
+            {type === 'numberProvide' && <ServiceIc />}
           </div>
           <div className='type-name'>
             {type === 'device' && 'Thiết bị'}

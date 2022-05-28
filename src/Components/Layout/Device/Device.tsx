@@ -5,7 +5,7 @@ import { Outlet } from 'react-router';
 const Device: React.FC = () => {
   return (
     <div className="app__layout-device">
-      <div className="content">
+      <div className="app__layout-device__content">
         <Outlet />
       </div>
     </div>

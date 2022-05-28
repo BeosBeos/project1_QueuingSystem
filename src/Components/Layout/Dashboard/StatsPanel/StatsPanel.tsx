@@ -1,7 +1,7 @@
 import React from 'react';
-import CalendarView from '../Calendar/CalendarView';
 import SummaryCard from './SummaryCard';
 import './statspanel.scss';
+import Calendar from 'react-calendar';
 
 interface summary {
   type: string;
@@ -39,10 +39,10 @@ const summaryData: summary[] = [
 
 const StatsPanel: React.FC = () => {
   return (
-    <div className="dashboard__stats">
-      <div className="dashboard__stats__container">
-        <div className="label">Tổng quan</div>
-        <div className="summary">
+    <div className='dashboard__stats'>
+      <div className='dashboard__stats__container'>
+        <div className='label'>Tổng quan</div>
+        <div className='summary'>
           {summaryData.map((summary, index) => (
             <SummaryCard
               key={index}
@@ -55,8 +55,8 @@ const StatsPanel: React.FC = () => {
             />
           ))}
         </div>
-        <div className="calendar">
-          <CalendarView />
+        <div className='calendar'>
+          <Calendar />
         </div>
       </div>
     </div>

@@ -1,15 +1,21 @@
 @import '../../../../scss/color';
-.device-list {
-  height: 1000px;
+
+.app__device-layout__device-list {
+  height: 100vh;
   width: 100%;
+  padding: 0 60px 80px 0;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.app__device-layout__device-list__container {
+  height: fit-content;
+  width: inherit;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  box-sizing: border-box;
-  padding-right: 60px;
-  padding-bottom: 60px;
-
-  // overflow-x: hidden;
 
   .row {
     display: flex;
@@ -17,22 +23,23 @@
     align-items: center;
   }
 
-  .label {
+  &__label {
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
     color: $orange;
   }
 
-  .filters {
+  &__filters {
     gap: 20px;
   }
-  .table {
+
+  &__table {
     height: fit-content;
   }
 }
 
-.add-device-btn {
+.app__device-layout__device-list__float-btn {
   position: fixed;
   height: 94px;
   width: 80px;

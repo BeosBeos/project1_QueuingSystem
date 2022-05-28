@@ -3,7 +3,6 @@
 .app__table {
   width: 100%;
   height: fit-content;
-  max-height: 490px;
 }
 
 table {
@@ -109,7 +108,7 @@ table {
 }
 
 .pagination {
-  margin-top: 20px;
+  margin: 20px 0px;
   width: 100%;
   height: fit-content;
   display: flex;

@@ -4,45 +4,29 @@ import Button from '../../../Button/Button';
 import Textbox from '../../../Textbox/Textbox';
 import './newdevice.scss';
 
-const NewDevice = () => {
+const NewDevice: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className='new-device'>
-      <div className='title'>Quản lý thiết bị</div>
-      <div className='container'>
-        <div className='container__info-divice'>Thông tin thiết bị</div>
-        <div className='col'>
-          <div className='col__left'>
-            <Textbox label='Mã thiết bị *' />
-            <Textbox label='Tên thiết bị *' />
-            <Textbox label='Địa chỉ IP *' />
-          </div>
-          <div className='col__right'>
-            <Textbox label='Loại thiết bị *' />
-            <Textbox label='Tên đăng nhập *' />
-            <Textbox label='Mật khẩu *' />
-          </div>
-        </div>
-        <div className='use-service'>
-          <Textbox label='Dịch vụ sử dụng *' />
-        </div>
-        <div className='note'>* Là trường thông tin bắt buộc</div>
+    <div className="app__layout-device__new-device">
+      <div className="app__layout-device__new-device__title">Quản lý thiết bị</div>
+      <div className="app__layout-device__new-device__container">
+        <div className="row form-label">Thông tin thiết bị</div>
+        <div className="row"><Textbox label="Mã thiết bị *" /><Textbox label="Loại thiết bị *" /></div>
+        <div className="row"><Textbox label="Tên thiết bị *" /><Textbox label="Tên đăng nhập *" /></div>
+        <div className="row"><Textbox label="Địa chỉ IP *" /><Textbox label="Mật khẩu *" /></div>
+        <div className="row"><Textbox label="Dịch vụ sử dụng *" /></div>
+        <div className="row note">* Là trường thông tin bắt buộc</div>
       </div>
-
-      <div className='btn__bottom'>
-        <div className='cancel'>
-          <Button
-            text='Hủy bỏ'
-            isOutlined
-            onClick={() => navigate('/dashboard/device/list')}
-          />
-        </div>
-        <div className='add__device'>
-          <Button
-            text='Thêm thiết bị'
-            onClick={() => navigate('/dashboard/device/list')}
-          />
-        </div>
+      <div className="app__layout-device__new-device__btn__bottom">
+        <Button
+          text='Hủy bỏ'
+          isOutlined
+          onClick={() => navigate('/dashboard/device/list')}
+        />
+        <Button
+          text='Thêm thiết bị'
+          onClick={() => navigate('/dashboard/device/list')}
+        />
       </div>
     </div>
   );

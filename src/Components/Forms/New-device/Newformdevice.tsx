@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Newformdevice = () => {
+const Newformdevice: React.FC = () => {
   return <div>Newformdevice</div>;
 };
 
