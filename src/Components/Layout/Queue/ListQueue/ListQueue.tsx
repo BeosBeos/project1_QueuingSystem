@@ -8,7 +8,7 @@ import { ReactComponent as AddIc } from '../../../../Assets/add-square.svg';
 import {
   activeStatus,
   connectionStatus,
-  deviceList,
+  queueTable,
   queueProvider,
   services,
 } from '../../../Mock';
@@ -46,7 +46,7 @@ const ListQueue: React.FC = () => {
             <Textbox label="Từ khoá" type={InputType.search} flexItem/>
           </div>
           <div className="row table">
-            <Table data={deviceList} displayRow={9} />
+            <Table data={queueTable} displayRow={9} />
           </div>
         </div>
       </div>

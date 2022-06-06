@@ -6,7 +6,7 @@ import { userInfo } from './types';
 const initialState: userInfo = {
 
   userName: "Beos",
-  fullName: "Mạnh Quang Thông",
+  fullName: "Mạnh Thông",
   phoneNumber: "123456789",
   email: "",
   password: "123456",

@@ -99,9 +99,9 @@ export interface IServiceRow {
 export interface IQueueRow {
   no: number;
   customerName: string;
-  serviceName: string;
-  grantTime: Date;
-  expireTime: Date;
+  serviceName: Service[];
+  grantTime: string;
+  expireTime: string;
   queueStatus: QueueStatus;
   provideBy: string;
   queueDetail: boolean;

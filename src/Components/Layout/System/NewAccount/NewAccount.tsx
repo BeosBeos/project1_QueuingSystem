@@ -10,7 +10,9 @@ const NewAccount: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className='app__layout-system__new-account'>
-      <div className='app__layout-system__new-account__title'>Quản lý tài khoản</div>
+      <div className='app__layout-system__new-account__title'>
+        Quản lý tài khoản
+      </div>
       <div className='app__layout-system__new-account__container'>
         <div className='row form-label'>Thông tin tài khoản</div>
         <div className='row'>
@@ -38,7 +40,7 @@ const NewAccount: React.FC = () => {
           onClick={() => navigate('/dashboard/system/accounts')}
         />
         <Button
-          text='Thêm thiết bị'
+          text='Thêm vai trò'
           onClick={() => navigate('/dashboard/system/accounts')}
         />
       </div>

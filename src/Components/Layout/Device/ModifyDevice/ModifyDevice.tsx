@@ -40,7 +40,7 @@ const ModifyDevice: React.FC = () => {
           onClick={() => navigate('/dashboard/device/modify')}
         />
         <Button
-          text='Cập nhật thiết bị'
+          text='Cập nhật vai trò'
           onClick={() => navigate('/dashboard/device/modify')}
         />
       </div>
