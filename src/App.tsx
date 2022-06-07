@@ -34,6 +34,7 @@ import ModifyAccount from './Components/Layout/System/ModifyAccount/ModifyAccoun
 import AccountLogs from './Components/Layout/System/AccountLogs/AccountLogs';
 import ListRole from './Components/Layout/System/ListRole/ListRole';
 import NewRole from './Components/Layout/System/NewRole/NewRole';
+import ModifyRole from './Components/Layout/System/ModifyRole/ModifyRole';
 
 const App: React.FC = () => {
   return (
@@ -76,6 +77,7 @@ const App: React.FC = () => {
               <Route path='roles' element={<ListRole/>} />
               <Route path='logs' element={<AccountLogs/>} />
               <Route path='new_role' element={<NewRole/>}/>
+              <Route path='modify_role' element={<ModifyRole/>}/>
             </Route>
             <Route path='user-info' element={<UserInfo />} />
           </Route>

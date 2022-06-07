@@ -6,6 +6,8 @@
   height: inherit !important;
   background-color: $gray;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   &__content {
     height: inherit !important;

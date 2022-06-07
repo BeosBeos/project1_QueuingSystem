@@ -17,6 +17,7 @@
   width: inherit;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   .row {
     display: flex;
@@ -29,6 +30,8 @@
     font-weight: 700;
     line-height: 36px;
     color: $orange;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__filters {

@@ -17,7 +17,7 @@ const ModifyDevice: React.FC = () => {
         <div className='row form-label'>Thông tin thiết bị</div>
         <div className='row'>
           <Textbox label='Mã thiết bị *' />
-          <Select label='Loại thiết bị' options={typeofDevice} />
+          <Select label='Loại thiết bị' options={typeofDevice} width={770}/>
         </div>
         <div className='row'>
           <Textbox label='Tên thiết bị *' />
@@ -37,11 +37,11 @@ const ModifyDevice: React.FC = () => {
         <Button
           text='Hủy bỏ'
           isOutlined
-          onClick={() => navigate('/dashboard/device/modify')}
+          onClick={() => navigate('/dashboard/device/list')}
         />
         <Button
-          text='Cập nhật vai trò'
-          onClick={() => navigate('/dashboard/device/modify')}
+          text='Cập nhật'
+          onClick={() => navigate('/dashboard/device/list')}
         />
       </div>
     </div>

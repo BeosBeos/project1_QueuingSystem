@@ -11,22 +11,35 @@ const DetailQueue: React.FC = () => {
         Quản lý cấp số
       </div>
       <div className="app__layout-queue__detail-queue__container">
-        <div className="row form-label">Thông tin thiết bị</div>
+        <div className="row form-label">Thông tin cấp số</div>
         <div className="row app__layout-queue__detail-queue__container__label">
-          <div className="flex-1">Mã thiết bị:</div>
-          <div className="flex-1">Loại thiết bị:</div>
+          <div className="flex-1">Họ và Tên:</div>
+          <div className="flex-1">Nguồn cấp:</div>
         </div>
         <div className="row app__layout-queue__detail-queue__container__label">
-          <div className="flex-1">Tên thiết bị:</div>
-          <div className="flex-1">Tên đăng nhập:</div>
+          <div className="flex-1">Tên dịch vụ:</div>
+          <div className="flex-1">Trạng thái:</div>
         </div>
         <div className="row app__layout-queue__detail-queue__container__label">
-          <div className="flex-1">Địa chỉ IP:</div>
-          <div className="flex-1">Mật khẩu:</div>
+          <div className="flex-1">Số thứ tự:</div>
+          <div className="flex-1">Số điện thoại:</div>
         </div>
         <div className="row app__layout-queue__detail-queue__container__label">
-          <div className="flex-1">Dịch vụ sử dụng:</div>
+          <div className="flex-1">Thời gian cấp:</div>
+          <div className="flex-1">Địa chỉ Email:</div>
         </div>
+        <div className="row app__layout-queue__detail-queue__container__label">
+          <div className="flex-1">Hạn sử dụng:</div>
+        </div>
+      </div>
+      <div
+        className="app__layout-queue__detail-queue__float-btn"
+        onClick={() => navigate('/dashboard/queue/list')}
+      >
+        <span>
+          <ReturnIc />
+        </span>
+        <span>Quay lại</span>
       </div>
     </div>
   );

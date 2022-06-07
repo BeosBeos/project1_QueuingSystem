@@ -9,7 +9,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  z-index: 1;
+  z-index: 8;
+  
+  
 
   .notification-bell {
     height: 32px;
@@ -30,7 +32,8 @@
       border-radius: 10px;
       top: 67px;
       box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-      left: -64px;
+      left: -90px;
+      
 
       &__header {
         height: 48px;

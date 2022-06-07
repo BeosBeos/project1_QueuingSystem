@@ -5,6 +5,7 @@ import './table.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import internal from 'stream';
 
 export enum DeviceActiveStatus {
   Active = 'Hoạt động',
@@ -17,13 +18,15 @@ export enum DeviceConnectionStatus {
 export enum QueueStatus {
   pending = "Đang chờ",
   used = "Đã sử dụng",
-  aborted = "Đã huỷ",
+  aborted = "Bỏ qua",
 }
 export enum Service {
-  Heart = 'Tim mạch',
-  Obstetric = 'Sản phụ khoa',
-  Dental = 'Nha sĩ',
+  Heart = 'Khám tim mạch',
+  Obstetric = 'Khám sản phụ khoa',
+  Dental = 'Khám răng',
   General = 'Khám tổng quát',
+  Eye = 'Khám mắt',
+  Space = ', ',
 }
 
 export enum ColumnLabels {
@@ -35,13 +38,26 @@ export enum ColumnLabels {
   services = 'Dịch vụ sử dụng',
   serviceId = 'Mã dịch vụ',
   serviceName = 'Tên dịch vụ',
-  serviceDescribe = 'Chi tiết dịch vụ',
+  serviceDescribe = 'Mô tả',
   no = 'STT',
   customerName = 'Tên khách hàng',
   grantTime = 'Thời gian cấp',
   expireTime = 'Hạn sử dụng',
   queueStatus = 'Trạng thái',
   provideBy = 'Nguồn cấp',
+
+  userName = 'Tên đăng nhập',
+  fullName = 'Họ tên',
+  phoneNumber = 'Số điện thoại',
+  email = 'Email',
+  role = 'Vai trò',
+
+  roleName = 'Tên vai trò',
+  userNumber = 'Số người dùng',
+
+  impactTime = 'Thời gian tác động',
+  ip = 'IP Thực hiện',
+  act = 'Thao tác thực hiện'
 }
 
 export enum DisplayedColumns {
@@ -65,6 +81,23 @@ export enum DisplayedColumns {
   queueStatus = 'queueStatus',
   provideBy = 'provideBy',
   queueDetail = 'queueDetail',
+
+  userName = 'userName',
+  fullName = 'fullName',
+  phoneNumber = 'phoneNumber',
+  email = 'email',
+  role = 'role',
+
+  userUpdate = 'userUpdate',
+
+  roleName = 'roleName',
+  userNumber = 'userNumber',
+  roleUpdate = 'roleUpdate',
+
+  impactTime = 'impactTime',
+  ip = 'ip',
+  act = 'act',
+
 }
 
 // export enum ServiceColumns {
@@ -110,6 +143,38 @@ export interface IQueueRow {
 export interface IServiceQueue {
   no: number;
   queueStatus: QueueStatus;
+}
+
+export interface IReportRow{
+  no: number;
+  serviceName: Service[];
+  grantTime: string;
+  queueStatus: QueueStatus;
+  provideBy: string;
+}
+
+export interface IUserRow{
+  userName: string;
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+  role: string;
+  isActivated: boolean;
+  userUpdate: boolean;
+}
+
+export interface IRoleRow{
+  roleName: string;
+  userNumber: number;
+  serviceDescribe: string;
+  roleUpdate: boolean;
+}
+
+export interface IAccountLogRow{
+  userName: string;
+  impactTime: string;
+  ip: string;
+  act: string;
 }
 
 type T = keyof typeof ColumnLabels;
@@ -212,20 +277,35 @@ const Table: React.FC<{ data: Array<any>; displayRow?: number }> = ({
                       </td>
                     );
                   }
+                  if (entry[0] === DisplayedColumns.userUpdate) {
+                    return (
+                      <td>
+                        <Link to={'/dashboard/system/modify_account'}>Cập nhật</Link>
+                      </td>
+                    );
+                  }
+                  if (entry[0] === DisplayedColumns.roleUpdate) {
+                    return (
+                      <td>
+                        <Link to={'/dashboard/system/modify_role'}>Cập nhật</Link>
+                      </td>
+                    );
+                  }
+                  
                   if (entry[0] === DisplayedColumns.queueStatus) {
                     return (
                       <td>
                         <div className='row'>
                           <div
-                            className={`status-dot ${entry[1] === QueueStatus.pending && `active`
-                              } ${entry[1] === QueueStatus.used && `inactive`
+                            className={`status-dot ${entry[1] === QueueStatus.pending && `pending`
+                              } ${entry[1] === QueueStatus.used && `used`
                               } ${entry[1] === QueueStatus.aborted && `inactive`
                               }`}
                           ></div>
                           <span>
-                            {entry[1] === QueueStatus.pending && 'Đang hoạt động'}
-                            {entry[1] === QueueStatus.used && 'Hoàn thành'}
-                            {entry[1] === QueueStatus.aborted && 'Vắng'}
+                            {entry[1] === QueueStatus.pending && 'Đang chờ'}
+                            {entry[1] === QueueStatus.used && 'Đã sử dụng '}
+                            {entry[1] === QueueStatus.aborted && 'Bỏ qua'}
                           </span>
                         </div>
                       </td>
@@ -238,6 +318,7 @@ const Table: React.FC<{ data: Array<any>; displayRow?: number }> = ({
                       </td>
                     );
                   }
+
                   return <td>{entry[1]}</td>;
                 })}
               </tr>

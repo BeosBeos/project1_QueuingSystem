@@ -4,7 +4,8 @@ import './accountlogs.scss';
 import { useNavigate } from 'react-router';
 import Table from '../../../Table/Table';
 import DatePicker from '../../../DatePicker/DatePicker';
-import { deviceList } from '../../../Mock';
+import { accountLog, deviceList } from '../../../Mock';
+import Textbox, {InputType} from '../../../Textbox/Textbox';
 
 const AccountLogs: React.FC = () => {
   const [modal, setModal] = useState<boolean>(false);
@@ -14,21 +15,13 @@ const AccountLogs: React.FC = () => {
       <div className="app__layout-system__account-logs__container">
         <div className="row app__layout-system__account-logs__container__label">
           <DatePicker label="Chọn thời gian" />
+          <Textbox label="Từ khoá" type={InputType.search} boxWidth={300} />
         </div>
         <div className="row app__layout-system__account-logs__container__table">
-          <Table data={deviceList} />
+          <Table data={accountLog} />
         </div>
       </div>
 
-      <div
-        className="app__layout-system__account-logs__float-btn"
-        onClick={() => {}}
-      >
-        <span>
-          <AddIc />
-        </span>
-        <span>Cấp số mới</span>
-      </div>
     </div>
   );
 };

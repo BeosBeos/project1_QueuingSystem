@@ -14,6 +14,7 @@
   align-items: center;
   user-select: none;
   box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+  z-index: 3;
 
   &__logo {
     width: 80%;
@@ -40,10 +41,50 @@
       background-color: transparent;
       padding: 10px;
       box-sizing: border-box;
+      position: relative;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #7E7D88;
+
+      &__expand-container {
+        position: absolute;
+        background-color: $background  !important;
+        width: 200px;
+        // height: 60px;
+        top: 0;
+        // left: 200px;
+        z-index: 4;
+        // left: 100%;
+        transform: translateX(190px);
+        filter: drop-shadow(3px 3px 4px rgba(70, 64, 67, 0.1));
+        
+        
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          padding: 10px;
+          align-items: center;
+          padding: 17px 0 18px 16px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #7E7D88;
+          box-sizing: border-box;
+          
+          &:hover{
+            background-color: #FFF2E7;
+          }
+        }
+        
+      }
 
       &:hover {
         cursor: pointer;
         background-color: rgba($color: $orange, $alpha: 0.2);
+        color: $oranged;
+
         svg {
           path {
             stroke: $orange;
@@ -58,18 +99,33 @@
         align-items: center;
         justify-content: center;
       }
+
+
+      &__icon2 {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+
     }
+
     .selected {
       background-color: rgba($color: $orange, $alpha: 1);
       color: $background;
+
       svg {
         path {
           stroke: $background;
         }
       }
+
       &:hover {
         cursor: pointer;
         background-color: rgba($color: $orange, $alpha: 1);
+
         svg {
           path {
             stroke: $background;
@@ -105,6 +161,7 @@
 
       &:hover {
         background-color: rgba($color: $orange, $alpha: 1);
+
         span {
           height: inherit;
           display: flex;
@@ -124,6 +181,7 @@
         display: flex;
         align-items: center;
         color: $orange;
+
         svg {
           path {
             stroke: rgba($color: $orange, $alpha: 1);

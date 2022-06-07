@@ -35,18 +35,18 @@ const Counter: React.FC = () => {
     Filler
   );
   const data = {
-    labels: [1, 5, 15, 20, 25, 30],
+    labels: ["Tuần 1","Tuần 2","Tuần 3","Tuần 4"],
     drawActiveElementsOnTop: false,
     datasets: [
       {
-        label: '',
+        label: "",
         data: [
-          25.0, 32.4, 22.2, 39.4, 34.2, 22.0, 23.2, 24.1, 20.0, 18.4, 19.1,
+          0, 2800.0, 3200.0, 4200.0,
         ],
         fill: true,
         lineTension: 0.4,
-        backgroundColor: 'rgba(206, 221, 255, 0.4)',
-        borderColor: '#5185F7',
+        backgroundColor: "rgba(206, 221, 255, 0.4)",
+        borderColor: "#5185F7",
         borderWidth: 1,
         pointRadius: 1,
       },

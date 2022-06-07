@@ -14,26 +14,26 @@ interface summary {
 
 const summaryData: summary[] = [
   {
-    type: 'device',
+    type: "device",
     percentage: 90,
     total: 4221,
     active: 3799,
     inactive: 422,
   },
   {
-    type: 'service',
-    percentage: 90,
-    total: 4221,
-    active: 3799,
-    inactive: 422,
+    type: "service",
+    percentage: 76,
+    total: 276,
+    active: 210,
+    inactive: 66,
   },
   {
-    type: 'numberProvide',
-    percentage: 90,
+    type: "numberProvide",
+    percentage: 86,
     total: 4221,
-    active: 3799,
-    inactive: 422,
-    ignore: 123,
+    active: 3721,
+    inactive: 486,
+    ignore: 22,
   },
 ];
 

@@ -9,6 +9,7 @@ import { ReactComponent as NumberIc } from '../../Assets/number.svg';
 import { ReactComponent as ReportIc } from '../../Assets/report.svg';
 import { ReactComponent as SettingIc } from '../../Assets/setting.svg';
 import { ReactComponent as SignOutIc } from '../../Assets/signout.svg';
+import { ReactComponent as MoreIc } from '../../Assets/more.svg';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/userSlice';
 
@@ -17,8 +18,8 @@ const items = [
   { name: 'Thiết bị', icon: <DeviceIc />, path: 'device/list' },
   { name: 'Dịch vụ', icon: <ServiceIc />, path: 'service/list' },
   { name: 'Cấp số', icon: <NumberIc />, path: 'queue/list' },
-  { name: 'Báo cáo', icon: <ReportIc />, path: 'report/create'},
-  { name: 'Cài đặt hệ thống', icon: <SettingIc />, path: 'system/accounts' },
+  { name: 'Báo cáo', icon: <ReportIc />, path: 'report/create' },
+  { name: 'Cài đặt hệ thống', icon: <SettingIc />, icon2: <MoreIc />, path: 'system/logs' },
 ];
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
@@ -43,14 +44,19 @@ const Sidebar: React.FC = () => {
         {items.map((item) => {
           return (
             <div
-              className={`menu-item ${
-                item.path?.includes(path) ? `selected` : ``
-              }`}
+              className={`menu-item ${item.path?.includes(path) ? `selected` : ``
+                }`}
               key={item.name}
               onClick={() => navigate(`${item.path ? item.path : ``}`)}
             >
               <div className='menu-item__icon'>{item.icon}</div>
               <div className='menu-item__name'>{item.name}</div>
+              <div className='menu-item__icon2'>{item.icon2}</div>
+              {/* {item.path.includes('system') && <div className="menu-item__expand-container">
+                <div className="row" onClick={() => navigate('/dashboard/system/roles')}>Quản lý vai trò</div>
+                <div className="row" onClick={() => navigate('/dashboard/system/accounts')}>Quản lý tài khoản </div>
+                <div className="row" onClick={() => navigate('/dashboard/system/logs')}>Nhật ký người dùng</div>
+              </div>} */}
             </div>
           );
         })}

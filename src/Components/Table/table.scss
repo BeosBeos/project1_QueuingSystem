@@ -69,6 +69,13 @@ table {
         .inactive {
           background-color: $red;
         }
+        .pending{
+          background-color: #4277FF;
+        }
+
+        .used{
+          background-color: gray;
+        }
 
         &:not(:last-child) {
           border-right: 1px solid #ffe3cd;

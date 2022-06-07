@@ -11,6 +11,7 @@ import {
   queueTable,
   queueProvider,
   services,
+  queueStatus
 } from '../../../Mock';
 import DatePicker from '../../../DatePicker/DatePicker';
 
@@ -31,12 +32,12 @@ const ListQueue: React.FC = () => {
               //   width={300}
             />
             <Select
-              label="Trạng thái kết nối"
-              options={connectionStatus}
+              label="Tình trạng"
+              options={queueStatus}
               flexItem
               //   width={300}
             />
-            <Select
+            <Select 
               label="Nguồn cấp"
               options={queueProvider}
               flexItem

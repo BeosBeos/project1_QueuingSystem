@@ -46,7 +46,7 @@
                 .col {
                     display: flex;
                     flex-direction: column;
-                    gap: 15px;
+                    gap: 35px;
                 }
 
                 textarea {
@@ -82,7 +82,7 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                padding-bottom: 36px;
+                // padding-bottom: 36px;
                 gap: 8px;
             }
 
@@ -119,6 +119,7 @@
 
             }
             .notification{
+                margin-top: 24px;
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 21px;

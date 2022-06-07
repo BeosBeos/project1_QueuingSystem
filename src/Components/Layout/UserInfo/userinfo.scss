@@ -1,8 +1,9 @@
-@import "../../../scss/color";
+@import '../../../scss/color';
 
 .app__layout-user-info {
+  margin-left: 24px;
   width: 100%;
-  max-width: 1112px;
+  max-width: 90%;
   height: 397px;
   background-color: $background;
   border-radius: 12px;
@@ -34,7 +35,6 @@
       }
     }
 
-    
     .app__layout-user-info__name {
       height: 36px;
       width: 188px;
@@ -51,9 +51,9 @@
     background-color: $orange;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;   
+    border: 2px solid #ffffff;
     bottom: 102px;
     left: 192px;
   }
@@ -69,7 +69,7 @@
     gap: 24px;
 
     input {
-      background-color: #EAEAEC;
+      background-color: #eaeaec;
     }
   }
 }

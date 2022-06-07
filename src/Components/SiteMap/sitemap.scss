@@ -2,7 +2,7 @@
 .sitemap {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 225px;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   font-weight: 700;
   line-height: 30px;
   color: $text;
-  z-index: 1;
+  z-index: 4;
 
   .path {
     display: flex;
@@ -21,6 +21,7 @@
 
     &__arrow {
       margin-right: 10px;
+      color: #7E7D88;
     }
 
     &__name {
@@ -37,6 +38,7 @@
     }
 
     &:first-child {
+      color: #7E7D88;
       svg {
         display: none;
       }
